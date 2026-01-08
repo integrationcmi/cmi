@@ -1,0 +1,16 @@
+# .npmignore
+src/
+tsconfig.json
+.git/
+.github/
+.vscode/
+.idea/
+*.test.ts
+*.test.js
+node_modules/
+.env
+.DS_Store
+*.log
+coverage/
+.eslintrc
+.prettierrc

@@ -1,0 +1,88 @@
+{
+  "name": "@ishakzail/cmi-payment-gateway",
+  "version": "1.0.0",
+  "description": "Framework-agnostic CMI Payment Gateway SDK with built-in security for Node.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./security": {
+      "import": "./dist/security.mjs",
+      "require": "./dist/security.cjs",
+      "types": "./dist/security.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build && npm test",
+    "test": "node --test test/**/*.test.js",
+    "test:coverage": "c8 npm test",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "type-check": "tsc --noEmit",
+    "build:tsc": "tsc && tsc-alias -p tsconfig.json",
+    "build:esm": "node scripts/build-esm.js",
+    "build:cjs": "node scripts/build-cjs.js",
+    "build": "npm run clean && npm run build:tsc && npm run build:esm && npm run build:cjs",
+    "build:watch": "concurrently \"tsc -w\" \"tsc-alias -w -p tsconfig.json\"",
+    "dev": "nodemon --watch src --ext ts --exec npm run build"
+  },
+  "keywords": [
+    "payment",
+    "gateway",
+    "cmi",
+    "morocco",
+    "payment-processing",
+    "express",
+    "nextjs",
+    "nestjs",
+    "nodejs",
+    "typescript",
+    "framework-agnostic",
+    "secure-payments",
+    "3d-secure"
+  ],
+  "author": "ishak.zail.iz@gmail.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ishakzail/cmi-payment-gateway.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ishakzail/cmi-payment-gateway/issues"
+  },
+  "homepage": "https://github.com/ishakzail/cmi-payment-gateway#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.24",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "c8": "^9.1.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.0",
+    "tsc-alias": "^1.8.16",
+    "typescript": "^5.9.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
