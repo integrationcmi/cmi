@@ -1,5 +1,5 @@
 {
-  "name": "@ishakzail/cmi-payment-gateway",
+  "name": "cmi",
   "version": "1.0.0",
   "description": "Framework-agnostic CMI Payment Gateway SDK with built-in security for Node.js",
   "main": "./dist/index.cjs",
@@ -63,12 +63,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ishakzail/cmi-payment-gateway.git"
+    "url": "https://github.com/integrationcmi/cmi.git"
   },
   "bugs": {
-    "url": "https://github.com/ishakzail/cmi-payment-gateway/issues"
+    "url": "https://github.com/integrationcmi/cmi/issues"
   },
-  "homepage": "https://github.com/ishakzail/cmi-payment-gateway#readme",
+  "homepage": "https://github.com/integrationcmi/cmi#readme",
   "engines": {
     "node": ">=18.0.0"
   },
